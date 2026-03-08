@@ -641,16 +641,29 @@ try {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
         });
+
         let payUrl = "";
-        if (res.data.url) {
+
+// 1. Kiểm tra xem res.data có phải là chuỗi không
+        if (typeof res.data === "string") {
+          // 2. Nếu chuỗi bắt đầu bằng "redirect:", ta cắt bỏ chữ "redirect:" đi
+          if (res.data.startsWith("redirect:")) {
+            payUrl = res.data.replace("redirect:", "");
+          } else {
+            // Nếu BE chỉ trả về link thuần không có chữ redirect
+            payUrl = res.data;
+          }
+        } else if (res.data && res.data.url) {
+          // Đề phòng sau này BE đổi ý trả về dạng JSON { "url": "..." }
           payUrl = res.data.url;
-        } else if (typeof res.data === "string" && res.data.startsWith("redirect:")) {
-          payUrl = res.data.replace("redirect:", "");
         }
+
+// 3. Thực hiện chuyển hướng
         if (payUrl) {
-          window.location.href = payUrl;
+          window.location.href = payUrl; // Đây là lệnh thần thánh giúp bạn bay qua VNPAY
         } else {
           toast.error("Không lấy được link thanh toán VNPAY");
+          console.log("BE trả về cái này nè:", res.data);
         }
         // Chi tiết thanh toán sẽ được lưu ở backend khi callback thành công từ VNPAY
       }
