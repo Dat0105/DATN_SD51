@@ -226,7 +226,7 @@ public class HoaDonServiceImpl implements HoaDonService {
             );
             Font font = new Font(baseFont, 12);
             Font fontTitle = new Font(baseFont, 16, Font.BOLD);
-            Paragraph title2 = new Paragraph("Fashion Shop", fontTitle);
+            Paragraph title2 = new Paragraph("Menz Fashion Shop", fontTitle);
             Paragraph titleDSSP = new Paragraph("Danh Sách sản phẩm", fontTitle);
             Paragraph sdt = new Paragraph("Số điện thoại: 0192345544", font);
             Paragraph email = new Paragraph("Email: shop@gmail.com", font);
@@ -616,10 +616,12 @@ public class HoaDonServiceImpl implements HoaDonService {
                                               Pageable pageable) {
         Pageable newPageable = PageRequest.of(
                 pageable.getPageNumber(),
-                pageable.getPageSize()
+                pageable.getPageSize(),
+                Sort.by(Sort.Direction.DESC, "id")
         );
         Specification<HoaDon> spec = HoaDonSpecification.filterHoaDon(
                 trangThai, loaiHoaDon, ngayTaoStart, ngayTaoEnd, searchTerm
+
         );
         Page<HoaDon> hoaDonPage = hoaDonRepository.findAll(spec, newPageable);
         return hoaDonPage.map(this::convertToHoaDonResponseWithDetails);

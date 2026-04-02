@@ -114,7 +114,7 @@ public class KhachHangService {
 
         // --- PHẦN GỬI EMAIL ĐÃ SỬ DỤNG HÀM MỚI ---
         if (emailConfigService != null && kh.getEmail() != null && !kh.getEmail().trim().isEmpty()) {
-            String subject = "🎉 Chào mừng bạn đến với Fashion Shirt Shop! 🎉";
+            String subject = "🎉 Chào mừng bạn đến với Menz Fashion Shirt Shop! 🎉";
             String body = "<div style=\"font-family:'Segoe UI',Arial,sans-serif;background:#f9fafd;padding:32px 0;\">"
                     + "<div style=\"max-width:520px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 4px 24px #e3e3ec;padding:40px 32px 32px 32px;\">"
                     + "<div style=\"text-align:center;\">"

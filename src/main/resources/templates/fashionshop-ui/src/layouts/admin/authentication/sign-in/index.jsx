@@ -382,7 +382,7 @@ function SignIn() {
             <ForgotPasswordFlow open={openForgot} onClose={() => setOpenForgot(false)} />
             <Box textAlign="center" mb={4}>
                 <Typography variant="h3" fontWeight={900} sx={{ color: "#1089d3", textShadow: "0 3px 10px rgba(16,137,211,0.12)", mb: 1 }}>
-                    Chào mừng bạn đến với Fashion Shop
+                    Chào mừng bạn đến với Menz Fashion Shop
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary" sx={{ maxWidth: 360, mx: "auto" }}>
                     Hãy đăng nhập để khám phá những sản phẩm thời trang mới nhất!

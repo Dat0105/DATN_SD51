@@ -133,7 +133,7 @@ export default function AboutPage() {
                             Chúng tôi là ai?
                         </Typography>
                         <Typography sx={{ fontSize: 17, color: "#444", mb: 2, lineHeight: 1.7 }}>
-                            Tại <b>Fashion shop</b>, chúng tôi đam mê tạo ra thời trang phong cách, chất lượng cao và giá cả
+                            Tại <b>Menz Fashion shop</b>, chúng tôi đam mê tạo ra thời trang phong cách, chất lượng cao và giá cả
                             phải chăng cho tất cả mọi người. Kể từ khi thành lập, chúng tôi đã cam kết tạo ra tác động tích
                             cực đến khách hàng, đội ngũ và cộng đồng của chúng tôi.
                         </Typography>

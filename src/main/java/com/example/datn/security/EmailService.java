@@ -16,7 +16,7 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
             helper.setTo(to);
-            helper.setSubject("Mã xác nhận đặt lại mật khẩu - Fashion Shop");
+            helper.setSubject("Mã xác nhận đặt lại mật khẩu - Menz Fashion Shop");
             helper.setText(buildHtmlContent(code), true); // true: gửi html
 
             mailSender.send(message);
@@ -30,7 +30,7 @@ public class EmailService {
         <div style="font-family:'Segoe UI',Arial,sans-serif;max-width:460px;margin:0 auto;background:#f8fafc;border-radius:12px;padding:32px 28px">
           <h2 style="color:#1089d3;margin-bottom:16px">Xin chào,</h2>
           <p style="font-size:16px;color:#222;margin:12px 0 18px">
-            Bạn vừa yêu cầu đặt lại mật khẩu cho tài khoản tại <b>Fashion Shop</b>.<br>
+            Bạn vừa yêu cầu đặt lại mật khẩu cho tài khoản tại <b>Menz Fashion Shop</b>.<br>
             Đây là mã xác nhận của bạn:
           </p>
           <div style="text-align:center;margin:32px 0 18px">
@@ -40,7 +40,7 @@ public class EmailService {
           </div>
           <p style="font-size:15px;color:#444;">Mã xác nhận này có hiệu lực trong vài phút.<br>Nếu bạn không yêu cầu, vui lòng bỏ qua email này.</p>
           <hr style="margin:28px 0 14px">
-          <div style="font-size:13px;color:#888;text-align:center;">Fashion Shop &copy; %s</div>
+          <div style="font-size:13px;color:#888;text-align:center;">Menz Fashion Shop &copy; %s</div>
         </div>
         """.formatted(code, java.time.Year.now());
     }

@@ -269,7 +269,7 @@ export default function Footer() {
                     boxShadow: "0 -2px 8px 0 #1769aa18"
                 }}
             >
-                <Box component="span" sx={{ fontWeight: 700 }}>Copyright &copy; 2025 SWETER (FASHIONSHOP)</Box>. Powered by SD-17.
+                <Box component="span" sx={{ fontWeight: 700 }}>Copyright &copy; 2025 Menz (FASHIONSHOP)</Box>. Powered by SD-17.
             </Box>
         </Box>
     );

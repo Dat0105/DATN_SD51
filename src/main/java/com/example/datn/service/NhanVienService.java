@@ -13,10 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -86,7 +83,7 @@ public class NhanVienService {
                     + "<div style=\"max-width:520px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 4px 24px #e3e3ec;padding:40px 32px 32px 32px;\">"
                     + "<div style=\"text-align:center;\">"
                     + "    <img src=\"https://i.imgur.com/3fJ1P48.png\" alt=\"Logo Shop\" style=\"width:80px;margin-bottom:16px;\">"
-                    + "    <h2 style=\"color:#1976d2;margin-bottom:8px;letter-spacing:1px;\">Chào mừng bạn gia nhập Fashion Shirt Shop!</h2>"
+                    + "    <h2 style=\"color:#1976d2;margin-bottom:8px;letter-spacing:1px;\">Chào mừng bạn gia nhập Menz Fashion Shirt Shop!</h2>"
                     + "    <p style=\"color:#444;font-size:17px;margin:0 0 20px 0;\">Xin chào <b style='color:#1976d2'>" + bean.getHoVaTen() + "</b>,</p>"
                     + "</div>"
                     + "<div style=\"background:#f7fbfd;border-radius:12px;padding:24px 18px;margin:18px 0 22px 0;border:1.5px solid #e3f3fc;\">"
@@ -165,6 +162,7 @@ public class NhanVienService {
         int page = vO.getPage() != null ? vO.getPage() : 0;
         int size = vO.getSize() != null ? vO.getSize() : 5;
         PageRequest pageRequest = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id"));
+
 
         Specification<NhanVien> spec = Specification.where(null);
 

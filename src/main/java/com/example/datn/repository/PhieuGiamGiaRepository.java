@@ -48,7 +48,7 @@ public interface PhieuGiamGiaRepository extends JpaRepository<PhieuGiamGia, Inte
 
     List<PhieuGiamGia> getPhieuGiamGiaByMaPhieuGiamGia(String maPhieuGiamGia);
 
-    Boolean getPhieuGiamGiaByTenPhieu(String tenPhieu);
+    boolean existsByTenPhieu(String tenPhieu);
 
 //    timfggg
     @Query("""
